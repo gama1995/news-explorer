@@ -1,7 +1,7 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
+// Keep the Vite configuration at the project root so the React plugin is loaded.
 export default defineConfig({
   plugins: [react()],
 })

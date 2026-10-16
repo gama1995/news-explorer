@@ -1,0 +1,99 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.modal__content {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  padding: 36px;
+  border-radius: 16px;
+  color: #1a1b22;
+  background-color: #fff;
+}
+
+.modal__close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  padding: 4px;
+  border: none;
+  color: #1a1b22;
+  background: transparent;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.modal__close:focus-visible {
+  outline: 2px solid #2f71e5;
+  outline-offset: 2px;
+}
+
+.modal__title {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.modal__form {
+  font-family: "Inter", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__note {
+  margin: 0;
+  color: #6b7075;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.modal__error {
+  margin: 0;
+  color: #a11919;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal__switch {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.modal__switch-button {
+  padding: 4px;
+  border: none;
+  color: #2f71e5;
+  background: transparent;
+}
+
+.modal__switch-button:hover {
+  text-decoration: underline;
+}
+
+.modal__switch-button:focus-visible {
+  outline: 2px solid #2f71e5;
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .modal {
+    padding: 16px;
+  }
+
+  .modal__content {
+    max-height: calc(100dvh - 32px);
+    padding: 32px 24px;
+  }
+}
