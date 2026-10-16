@@ -65,6 +65,19 @@ The production build is written to `dist`. Local development uses `https://newsa
 
 When deploying, set `VITE_NEWS_API_KEY` in the build environment. Configure the static host to serve `index.html` for client-side routes, including direct visits to `/saved-news`.
 
+### Deploy to Netlify
+
+The repository includes `netlify.toml` with Node.js 24, build command `npm run build`, publish directory `dist`, and a fallback to `index.html` for client-side routes.
+
+1. Import `gama1995/news-explorer` from GitHub into Netlify.
+2. Select `stage-1-frontend-and-api` as the branch to deploy while Stage 1 is under review. Do not merge into `main` before instructor acceptance.
+3. Leave the base directory empty and use the build and publish settings from `netlify.toml`.
+4. Add `VITE_NEWS_API_KEY` as a build environment variable using your News API key.
+5. Deploy, then test searching, demo sign-in, saving/deleting, and a direct browser refresh on `/saved-news`.
+6. Replace the pending deployment entry above with the live site URL.
+
+After Stage 1 is accepted and merged, the Netlify production branch can be changed to `main`.
+
 ## Project structure
 
 ```text
