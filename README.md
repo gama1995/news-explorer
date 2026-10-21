@@ -6,7 +6,7 @@ A responsive React application for finding news articles by keyword and keeping 
 
 - [GitHub repository](https://github.com/gama1995/news-explorer)
 - [Project design in Figma](https://www.figma.com/design/3ottwMEhlBt95Dbn8dw1NH/Your-Final-Project?node-id=0-1)
-- Live deployment: pending.
+- [Live site on GitHub Pages](https://gama1995.github.io/news-explorer/)
 
 ## Features
 
@@ -75,7 +75,7 @@ The repository includes `.github/workflows/deploy.yml`. It builds and deploys pu
 4. Commit and push the deployment files to the Stage 1 branch.
 5. Watch the **Deploy NewsExplorer to GitHub Pages** workflow in Actions.
 6. After successful deployment, test `https://gama1995.github.io/news-explorer/` and a direct visit to `https://gama1995.github.io/news-explorer/saved-news/`.
-7. Replace the pending deployment entry above with the verified live URL.
+7. Confirm the live link in this README points to the successfully deployed site.
 
 The workflow runs `npm run build:pages`, which sets Vite's base to `/news-explorer/` and copies an HTML entry to `dist/saved-news/index.html`. React Router uses the same base, so links, assets, and saved-page refreshes work under the repository path. Local development and ordinary `npm run build` keep the root base `/`.
 
