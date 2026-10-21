@@ -1,0 +1,36 @@
+.app {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app__title {
+  margin: 0 0 16px;
+}
+
+.app__description {
+  margin: 0;
+}
+
+.app__error {
+  margin: 0;
+  padding: 16px 24px;
+  color: #a11919;
+  background-color: #fff1f1;
+  text-align: center;
+}
+
+.hero {
+  color: #fff;
+  background-color: #303630;
+  background-image: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)), var(--hero-image);
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    background-image: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)), var(--hero-image-mobile);
+  }
+}
+ 

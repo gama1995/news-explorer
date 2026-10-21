@@ -1,0 +1,39 @@
+.login__label {
+  color: #2f71e5;
+  font-size: 12px;
+}
+
+.login__input {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: #1a1b22;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.login__submit {
+  margin-top: 12px;
+  padding: 20px;
+  border: none;
+  border-radius: 32px;
+  color: #fff;
+  background-color: #2f71e5;
+}
+
+.login__submit:hover {
+  background-color: #347eff;
+}
+
+.login__submit:disabled {
+  color: #6b7075;
+  background-color: #e6e8eb;
+  cursor: default;
+}
+
+.login__input:focus-visible,
+.login__submit:focus-visible {
+  outline: 2px solid #2f71e5;
+  outline-offset: 4px;
+}
