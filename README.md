@@ -65,18 +65,21 @@ The production build is written to `dist`. Local development uses `https://newsa
 
 When deploying, set `VITE_NEWS_API_KEY` in the build environment. Configure the static host to serve `index.html` for client-side routes, including direct visits to `/saved-news`.
 
-### Deploy to Netlify
+### Deploy to GitHub Pages
 
-The repository includes `netlify.toml` with Node.js 24, build command `npm run build`, publish directory `dist`, and a fallback to `index.html` for client-side routes.
+The repository includes `.github/workflows/deploy.yml`. It builds and deploys pushes to `stage-1-frontend-and-api` and, after acceptance and merge, `main`.
 
-1. Import `gama1995/news-explorer` from GitHub into Netlify.
-2. Select `stage-1-frontend-and-api` as the branch to deploy while Stage 1 is under review. Do not merge into `main` before instructor acceptance.
-3. Leave the base directory empty and use the build and publish settings from `netlify.toml`.
-4. Add `VITE_NEWS_API_KEY` as a build environment variable using your News API key.
-5. Deploy, then test searching, demo sign-in, saving/deleting, and a direct browser refresh on `/saved-news`.
-6. Replace the pending deployment entry above with the live site URL.
+1. In the repository's Settings > Pages, set Source to **GitHub Actions**.
+2. In Settings > Secrets and variables > Actions, add a repository secret named `VITE_NEWS_API_KEY` with your News API key as its value.
+3. If the `github-pages` environment restricts deployment branches, allow `stage-1-frontend-and-api` during review. Keep `main` unmerged until instructor acceptance.
+4. Commit and push the deployment files to the Stage 1 branch.
+5. Watch the **Deploy NewsExplorer to GitHub Pages** workflow in Actions.
+6. After successful deployment, test `https://gama1995.github.io/news-explorer/` and a direct visit to `https://gama1995.github.io/news-explorer/saved-news/`.
+7. Replace the pending deployment entry above with the verified live URL.
 
-After Stage 1 is accepted and merged, the Netlify production branch can be changed to `main`.
+The workflow runs `npm run build:pages`, which sets Vite's base to `/news-explorer/` and copies an HTML entry to `dist/saved-news/index.html`. React Router uses the same base, so links, assets, and saved-page refreshes work under the repository path. Local development and ordinary `npm run build` keep the root base `/`.
+
+The existing `netlify.toml` is retained as an alternative hosting configuration.
 
 ## Project structure
 
